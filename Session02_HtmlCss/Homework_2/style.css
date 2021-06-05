@@ -1,0 +1,99 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  background-color: #f0efef;
+}
+
+.margin-top {
+  margin-top: 16px;
+}
+
+.nav-links {
+  display: flex;
+  width: 30%;
+  margin: auto;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  padding: 0px 15px;
+}
+
+.header-container {
+  display: flex;
+  width: 40%;
+  margin: auto;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  top: -300px;
+}
+
+.about p {
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: -1px;
+}
+
+.about-list {
+  display: flex;
+  list-style: none;
+}
+
+.about-list-container {
+  background-color: #f0efef;
+  flex: 1;
+  margin-left: 16px;
+  margin-right: 16px;
+  border-radius: 5px;
+}
+
+.about-logos {
+  width: 40px;
+  margin: 10px 0px;
+}
+
+.about-title-icon {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects p {
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: -1px;
+}
+.contact p {
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: -1px;
+}
+
+#contact-logos {
+  display: flex;
+  width: 30%;
+  margin: auto;
+  justify-content: space-around;
+  list-style: none;
+  padding: 16px;
+}
