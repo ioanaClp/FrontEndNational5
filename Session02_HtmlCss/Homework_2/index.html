@@ -6,43 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Ioana Clapa</title>
 </head>
 
 <body>
-    <header>
-        <nav>
+    <header id="header">
+        <nav class="navbar">
+            <a href="#home"><img class="logo-image" src="Images/logo_2.png" alt="logo" width="140px"></a>
             <ul class="nav-links">
-                <li><a class="nav-link" href="#">Home</a></li>
-                <li><a class="nav-link" href="#">About</a></li>
-                <li><a class="nav-link" href="#">Projects</a></li>
-                <li><a class="nav-link" href="#">Contact</a></li>
+                <li><a class="nav-link" href="#home">Home</a></li>
+                <li><a class="nav-link" href="#about">About</a></li>
+                <li><a class="nav-link" href="#projects">Projects</a></li>
+                <li><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <div class="header-container">
-            <a class="logo-image" href="#"><img src="Images/logo_1.png" alt="logo" width="270px"></a>
-            <img class="image-ioana" src="Images/ioana.png" alt="ioana" width="325px">
+
+        <div id="home" class="home-container">
+            <div class="home-text">
+                <h3>Welcome to my page!</h3>
+                <p>"Just don't give up trying to do what you really want to do. Where there is love and inspiration, I
+                    don't think you can go wrong." <br>-Ella Fitzgerald</p>
+            </div>
+            <div class="home-image">
+                <img class="my-image" src="Images/ioana4.png" alt="ioana">
+            </div>
         </div>
 
     </header>
 
-    <!-- <div class="wave">
-        <img src="Images/wave.svg" alt="">
-    </div> -->
-
     <main>
-        <section class="about">
-            <p class="important-titles">About</p>
+        <section id="about" class="about">
+            <h3 class="important-titles">About</h3>
             <ul class="about-list">
                 <li class="about-list-container">
                     <div class="about-title-icon">
                         <h3 class="margin-top">Education</h3>
                         <img class="about-logos" src="Images/education.png" alt="education logo">
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolor ea iusto aut maxime nesciunt
-                        mollitia earum atque laborum accusamus!</p>
+                    <span class="skills">1. High School: <br><br> Colegiul National Andrei Muresanu Dej, 2010 -
+                        2014</span> <br>
+                    <span class="skills">2. University: <br><br> Faculty of Social Work, 2014 - 2017</span>
                 </li>
 
                 <li class="about-list-container">
@@ -50,41 +55,107 @@
                         <h3 class="margin-top">Experience</h3>
                         <img class="about-logos" src="Images/experience.png" alt="experience logo">
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolor ea iusto aut maxime nesciunt
-                        mollitia earum atque laborum accusamus!</p>
+                    <span class="skills">1. After School Programs Volunteer, 2014 - 2017</span>
+                    <span class="skills">2. Nail Artist, 2017 - 2020</span>
+                    <span class="skills">3. Intro In IT: Scoala Informala de IT, 2021</span>
+                    <span class="skills">4. Web Development: Scoala Informala de IT, 2021</span>
                 </li>
                 <li class="about-list-container" i>
                     <div class="about-title-icon">
-                    <h3 class="margin-top">Skills</h3>
-                    <img class="about-logos" src="Images/skills.png" alt="skills logo">
+                        <h3 class="margin-top">Skills</h3>
+                        <img class="about-logos" src="Images/skills.png" alt="skills logo">
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolor ea iusto aut maxime nesciunt
-                        mollitia earum atque laborum accusamus!</p>
+                    <span class="skills">1. HTML</span>
+                    <span class="skills">2. CSS</span>
+                    <span class="skills">3. JS</span>
+                    <span class="skills">4. English</span>
+                    <span class="skills">5. Communication Skills</span>
+                    <span class="skills">6. Teamwork</span>
+
                 </li>
 
             </ul>
         </section>
 
-        <section class="projects">
-            <p class="important-titles">Projects</p>
-            
-        </section>
 
-        <section class="contact">
-            <p class="important-titles">Contact</p>
-            <div id="contact-logos">
-                <a href="http://linkedin.com" target="_blank">
-                    <img src="Images/linkedin.svg" alt="linkedin" width="30px" height="30px" />
-                </a>
-                <a href="http://facebook.com" target="_blank">
-                    <img src="Images/facebook.svg" alt="facebook" width="30px" height="30px" />
-                </a>
-                <a href="http://instagram.com" target="_blank">
-                    <img src="Images/instagram.svg" alt="instagram" width="30px" height="30px" />
-                </a>
+        <section id="projects" class="projects">
+            <h3 class="important-titles">Projects Soon. Stay tunned!</h3>
+            <div>
+                <img class="work-in-progress" src="Images/work_in_progress.svg" alt="">
             </div>
         </section>
+
     </main>
+
+    <footer id="contact" class="contact-container">
+        <img class="find-me" src="Images/find-me-here.png" alt="">
+        <h3>Contact me</h3>
+        <p>Feel free to get in touch with me. Send me a message :)</p>
+        <div class="contact-box">
+            <div class="contact-left">
+                <h3>Send Message</h3>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="" id="name" placeholder="Type name" />
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="" id="email" placeholder="Type email" />
+                    </div>
+                    <div class="input-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" name="" id="subject" placeholder="Type subject" />
+                    </div>
+
+                    <label for="msg">Message</label>
+                    <textarea name="" id="msg" rows="3" placeholder="Type your message"></textarea>
+
+
+                    <button class="contact-button" type="submit">SEND</button>
+                </div>
+            </div>
+            <div class="contact-right">
+                <h3>Reach Me</h3>
+                <table>
+                    <tr>
+                        <td>Email</td>
+                        <td>minzatioana@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Location</td>
+                        <td>Cluj-Napoca, Romania</td>
+                    </tr>
+                    <tr>
+                        <td>Linkedin</td>
+                        <td><a href="https://www.linkedin.com/in/ioana-clapa-a5bb20187/" target="_blank">
+                                <img class="social-media" src="Images/linkedin.svg" alt="linkedin" width="30px"
+                                    height="30px">
+                                </img></td>
+                    </tr>
+                    <tr>
+                        <td>Facebook</td>
+                        <td><a href="https://www.facebook.com/minzat.ioana" target="_blank">
+                                <img class="social-media" src="Images/facebook.svg" alt="facebook" width="30px"
+                                    height="30px">
+                                </img>
+                            </a>
+                            </img></td>
+                    </tr>
+                    <tr>
+                        <td>Instagram</td>
+                        <td><a href="https://www.instagram.com/ioanaminzat/" target="_blank">
+                                <img class="social-media" src="Images/instagram.svg" alt="instagram" width="30px"
+                                    height="30px">
+                                </img>
+                            </a>
+                            </img></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </footer>
 </body>
 
 </html>
