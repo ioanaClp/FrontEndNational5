@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card {
+    grid-area: card;
+    background-color: cornflowerblue;
+    color: cornsilk;
+}
+.container {
+    display: grid;
+    gap: 5px;
+}
+
+#navbar{
+    
+}
+
+@media (max-width: 500px) {
+    .container {
+        grid-template-areas: 
+            "navbar"
+            "card"
+            "card"
+            "card"
+            "card"
+            "card"
+            "card"
+            "card"
+            "card"
+            "card"
+            "card"
+            "card"
+            "card"
+            "footer"
+        ;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 1fr;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 768px) {
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+}
+
+@media (min-width: 1201px) {
+}
+

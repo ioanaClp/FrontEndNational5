@@ -1,6 +1,7 @@
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 html {
@@ -15,6 +16,10 @@ body {
 .margin-top {
   margin-top: 16px;
 }
+
+/* #header{
+    height: 100vh;
+} */
 
 .navbar {
   display: flex;
@@ -38,6 +43,12 @@ body {
   text-decoration: none;
   color: black;
   padding: 0px 15px;
+}
+
+.nav-link:hover {
+  background-color: #3f3d56bb;
+  color: ivory;
+  border-radius: 5px;
 }
 
 .home-container {
@@ -104,6 +115,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   padding: 16px;
+  height: 500px;
 }
 
 .about-logos {
@@ -169,14 +181,14 @@ container p {
 }
 
 .contact-left {
-  flex-basis: 65%;
+  flex-basis: 60%;
   padding: 40px 60px;
 }
 
 .contact-right {
-  flex-basis: 35%;
+  flex-basis: 40%;
   padding: 40px;
-  background-color: rgba(255, 248, 220, 0.596);
+  background-color: rgba(255, 248, 220, 0.733);
   border-right: 12px;
   border-radius: 0px 12px 12px 0px;
 }
@@ -200,6 +212,10 @@ container p {
 
 .input-row .input-group {
   flex-basis: 45%;
+}
+
+.input-group, #msg {
+  width: 80%;
 }
 
 input {
@@ -232,7 +248,7 @@ label {
 }
 
 .contact-button {
-  background-color: cornsilk;
+  background-color: #fff8dc;
   text-decoration: black;
   width: 30%;
   align-self: center;
@@ -248,7 +264,7 @@ label {
 
 .contact-button:hover {
   background-color: #3f3d56bb;
-  color: white;
+  color: ivory;
 }
 
 tr td:first-child {

@@ -1,0 +1,16 @@
+.example {
+    width: 700px;
+    margin: auto;
+    background-color: cornsilk;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+input, button {
+    width: 50%;
+    align-self: center;
+    margin-bottom: 10px;
+}
