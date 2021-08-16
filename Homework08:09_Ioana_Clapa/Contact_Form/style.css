@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-form {
+  margin: auto;
+  margin-top: 50px;
+  width: 600px;
+  border: 3px solid #ceaa9a;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-items: center;
+  align-content: center;
+  border-radius: 10px;
+}
+
+.text-section {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+textarea {
+  text-align: start;
+  margin-top: 10px;
+  padding: 5px 10px;
+  border: 1px solid #ceaa9a;
+  border-radius: 5px;
+}
+
+button {
+  width: 70px;
+  margin-top: 20px;
+  padding: 5px 10px;
+  align-self: flex-end;
+  border: 1px solid #ceaa9a;
+  background-color: #ceaa9a;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+input {
+  margin: 10px 0px;
+  padding: 5px 10px;
+  border: 1px solid #ceaa9a;
+  border-radius: 5px;
+}
+
+img {
+  width: 200px;
+  margin: 30px;
+  margin-top: 60px;
+  margin-left: 0;
+}
+
+#success {
+  width: 600px;
+  border: 3px solid #ceaa9a;
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  border-radius: 5px;
+  visibility: hidden;
+}
+
+#success img {
+  width: 20px;
+  margin: 5px;
+}
+
+#success p {
+  margin-right: 250px;
+  margin-left: 10px;
+  width: auto;
+  text-align: start;
+  align-self: center;
+}
+
+.close-btn {
+  align-self: center;
+  width: auto;
+  margin: 5px;
+  cursor: pointer;
+}

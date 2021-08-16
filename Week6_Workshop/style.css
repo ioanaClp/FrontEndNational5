@@ -1,0 +1,40 @@
+.calculator {
+  width: 700px;
+  margin: auto;
+  background-color: #ceaa9a;
+  text-align: center;
+  border: 1px solid #ebcdc3;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 40%;
+  align-self: center;
+  margin-bottom: 10px;
+  border: 1px solid #ebcdc3;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+label {
+  padding: 10px;
+  font-size: 20px;
+}
+
+#output {
+  font-size: 24px;
+}
+
+button {
+  width: 15%;
+  align-self: center;
+  margin: 15px;
+  background-color: #ebcdc3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 0px;
+  font-size: 18px;
+}

@@ -1,0 +1,59 @@
+1. Write a JS program to find maximum between two numbers using if else. JS program to input two numbers as function params from user and print the maximum in the console.
+
+Example
+Input
+Input num1: 10
+Input num2: 20
+Output
+
+Maximum = 20
+
+
+2. Write a JS program to find maximum between three numbers using if else. JS program to input three numbers from user and print the maximum in a paragraph.
+
+Example
+Input
+Input num1: 10
+Input num2: 20
+Input num3: 30
+Output
+
+Maximum = 30
+
+3. Write a JS program to check whether an alphabet is vowel or consonant using switch case. 
+
+Example
+Input
+Input character: a
+Output
+
+'a' is vowel
+
+4. Write a JS program to enter month number between(1-12) and print number of days in month using if else. 
+
+Example
+Input
+Enter month number: 1
+Output
+
+It contains 31 days.
+
+5. Write a JavaScript program to sum the multiples of 3 and 5 under 100
+Output:
+
+
+6. Calculate the average of the numbers in an array of numbers
+
+7. Create a function that receives an array of numbers and returns an array containing only the positive numbers
+
+8. Print the multiplication table with 9
+Output:
+1 x 9 = 9
+2 x 9 = 18
+
+9 x 9 = 81
+10 x 9 = 90
+
+9. Calculate the sum of odd numbers greater than 10 and less than 30
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form - Homework</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="success">
+      <img class="check" src="Images/check.png" />
+      <p>Thank you!</p>
+      <button class="close-btn" type="submit">
+        <img class="cancel" src="Images/cancel.png" />
+      </button>
+    </div>
+    <section class="contact-form">
+      <div class="text-section">
+        <input type="text" id="first-name" placeholder="First Name" />
+        <input type="text" id="last-name" placeholder="Last Name" />
+        <form class="radio-section">
+          <p>Gender</p>
+          <input type="radio" id="male" name="gender" checked />
+          <label for="male">M</label> <br />
+          <input type="radio" id="female" name="gender" />
+          <label for="female">F</label>
+        </form>
+        <textarea
+          id="message"
+          rows="5"
+          cols="30"
+          placeholder="Your message here.."
+        ></textarea>
+        <button id="submit-btn" type="submit">Submit</button>
+      </div>
+      <div class="image-section">
+        <img id="photo" src="Images/profile-man.png" alt="" />
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>

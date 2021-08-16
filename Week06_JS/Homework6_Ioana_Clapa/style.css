@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#exercise {
+  background-color: #ceaa9a;
+  width: 800px;
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1.5px solid #ebcdc3;
+  padding: 10px 0px;
+  color: white;
+  font-size: 20px;
+}
+
+#exercise p {
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.check-text {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+p {
+  word-wrap: break-word;
+}
+
+#empty {
+  width: 100px;
+  height: 200px;
+}
+
+#output-pattern-2 {
+  text-align: left;
+  margin-left: 360px;
+}
+
+#output-pattern-3 {
+  text-align: right;
+  margin-right: 360px;
+}
