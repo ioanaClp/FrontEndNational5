@@ -6,11 +6,13 @@ var male = document.getElementById('male');
 var female = document.getElementById('female');
 var success = document.getElementById('success');
 var photo = document.getElementById('photo');
+var successCloseBtn = document.getElementById('close-btn');
 
 
 submitBtn.addEventListener('click', validateFields);
 male.addEventListener('click', onClickMale);
 female.addEventListener('click', onClickFemale);
+successCloseBtn.addEventListener('click', closeAlert);
 
 
 function validateFields() {
@@ -63,4 +65,8 @@ function onClickFemale() {
     console.log("selected female");
 
     document.getElementById("photo").src = "Images/profile-woman.png";
+}
+
+function closeAlert() {
+    success.style.visibility = "hidden";
 }
