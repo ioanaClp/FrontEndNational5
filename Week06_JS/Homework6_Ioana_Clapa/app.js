@@ -67,7 +67,7 @@ function elementAppearInArray(num) {
     var total = 0;
 
     for (var i = 0; i < list.length; i++) {
-        if(num == list[i]) {
+        if (num == list[i]) {
             total = total + 1;
         }
     }
@@ -91,8 +91,8 @@ function first50Fibonacci() {
         num1 = num2;
         num2 = num3;
         console.log(num3);
-        result.push(i);
-        document.getElementById('output-3').innerHTML = "Result = " + result;
+        result.push(num3);
+        document.getElementById('output-3').innerHTML = "Result = " + result + ',  ';
     }
 }
 
@@ -129,14 +129,14 @@ numbersFrom1To100();
 //   **********
 //   **********
 
-function firstPattern(){
+function firstPattern() {
     console.log("BONUS: First Pattern:");
 
-    var string = ""; 
-    var result = ""; 
+    var string = "";
+    var result = "";
 
-    for(var i = 1; i <= 4; i++){
-        for(var j = 1; j <= 10; j++){
+    for (var i = 1; i <= 4; i++) {
+        for (var j = 1; j <= 10; j++) {
             string += "*";
             result += "*";
         }
@@ -155,14 +155,14 @@ firstPattern();
 //   ****
 //   *****
 
-function secondPattern(){
+function secondPattern() {
     console.log("BONUS: Second Pattern:");
 
     var string = "";
     var result = "";
 
-    for(var i = 1; i <= 5; i++){
-        for(var j = 0; j < i; j++){
+    for (var i = 1; i <= 5; i++) {
+        for (var j = 0; j < i; j++) {
             string += "*";
             result += "*";
         }
@@ -181,10 +181,10 @@ secondPattern();
 //      ****
 //     *****
 
-function thirdPattern(){
+function thirdPattern() {
     console.log("BONUS: Third Pattern:");
 
-    var n = 5; 
+    var n = 5;
     var string = "";
     var result = "";
 
@@ -212,19 +212,19 @@ thirdPattern();
 //     *******
 //    *********
 
-function piramidPattern(){
+function piramidPattern() {
     console.log("BONUS: Piramid Pattern:");
 
     var n = 5;
     var string = "";
     var result = "";
 
-    for(var i = 1; i <= n; i++) {
-        for(var j = n; j > i; j--){ //printing spaces
+    for (var i = 1; i <= n; i++) {
+        for (var j = n; j > i; j--) { //printing spaces
             string += " ";
             result += " ";
         }
-        for(var k = 0; k < 2 * i - 1; k++){ //printing stars
+        for (var k = 0; k < 2 * i - 1; k++) { //printing stars
             string += "*";
             result += "*";
         }
@@ -243,19 +243,19 @@ piramidPattern();
 //    4444444
 //   555555555
 
-function piramidPatternNumber(){
+function piramidPatternNumber() {
     console.log("BONUS: Piramid Pattern Number:");
 
     var n = 5;
     var string = "";
     var result = "";
 
-    for(var i = 1; i <= n; i++) {
-        for(var j = n; j > i; j--){ //printing spaces
+    for (var i = 1; i <= n; i++) {
+        for (var j = n; j > i; j--) { //printing spaces
             string += " ";
             result += " ";
         }
-        for(var k = 0; k < 2 * i - 1; k++){ //printing numbers
+        for (var k = 0; k < 2 * i - 1; k++) { //printing numbers
             string += i;
             result += i;
         }

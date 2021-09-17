@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "9caa9dde-eade-48e9-8467-7fb865aa50c3",
+		"name": "Final Project Frond End 12 - Products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01_Get_Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://61363d158700c50017ef54b5.mockapi.io/products",
+					"protocol": "https",
+					"host": [
+						"61363d158700c50017ef54b5",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02_Get_Product_By_Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://61363d158700c50017ef54b5.mockapi.io/products/55",
+					"protocol": "https",
+					"host": [
+						"61363d158700c50017ef54b5",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"products",
+						"55"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03_POST_new_product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"name\": \"Real Madrid T-Shirt Home\",\r\n        \"picture\": \"https://cdn.aboutstatic.com/file/images/6a191825ed4b0514be1684a501747d9e.png?width=2000&height=2666&quality=75&bg=F4F4F5&trim=1\",\r\n        \"price\": \"120.00\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://61363d158700c50017ef54b5.mockapi.io/products",
+					"protocol": "https",
+					"host": [
+						"61363d158700c50017ef54b5",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04_PUT_update_existing_product",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"name\": \"Real Madrid T-Shirt Away\",\r\n        \"price\": \"179.99\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://61363d158700c50017ef54b5.mockapi.io/products/55",
+					"protocol": "https",
+					"host": [
+						"61363d158700c50017ef54b5",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"products",
+						"55"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05_DELETE_delete_existing_product",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"name\": \"Real Madrid T-Shirt Away\",\r\n        \"price\": \"179.99\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://61363d158700c50017ef54b5.mockapi.io/products/55",
+					"protocol": "https",
+					"host": [
+						"61363d158700c50017ef54b5",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"products",
+						"55"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

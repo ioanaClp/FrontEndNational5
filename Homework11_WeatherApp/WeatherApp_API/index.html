@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+  </head>
+  <body
+    class="d-flex flex-column min-vh-100"
+    style="
+      background-image: url(/Images/clouds.jpeg);
+      opacity: 0.7;
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+    "
+  >
+    <div class="container">
+      <h1 class="text-center mt-5 mb-3">Weather App</h1>
+      <input
+        type="text"
+        id="location-input"
+        class="form-control w-50 mx-auto rounded"
+        placeholder="Search Location..."
+      />
+    </div>
+
+    <div id="weather-container" class="container" style="visibility: hidden">
+      <h3 id="location" class="text-center mt-3">
+        Cluj-Napoca
+        <i class="bi bi-geo-alt" style="font-size: 2rem"></i>
+      </h3>
+      <p id="main-description" class="text-warning text-center mb-3">Rainy</p>
+      <div class="container">
+        <i
+          id="icon-temp"
+          class="text-primary d-flex justify-content-center mb-2"
+          style="font-size: 2.5rem"
+        ></i>
+      </div>
+      <h1 id="temperaturee" class="text-center" style="font-size: 4rem">26℃</h1>
+
+      <div class="container mt-4 text-light">
+        <div class="row">
+          <div class="col-sm d-flex flex-column align-items-center">
+            <p>Description:</p>
+            <p id="description" class="text-warning">Rainy</p>
+          </div>
+          <div class="col-sm d-flex flex-column align-items-center">
+            <p>High:</p>
+            <p id="high-temp" class="text-warning">26℃</p>
+          </div>
+          <div class="col-sm d-flex flex-column align-items-center">
+            <p>Low:</p>
+            <p id="low-temp" class="text-warning">15℃</p>
+          </div>
+          <div class="col-sm d-flex flex-column align-items-center">
+            <p>Humidity:</p>
+            <p id="humidity" class="text-warning">78</p>
+          </div>
+          <div class="col-sm d-flex flex-column align-items-center">
+            <p>Pressure:</p>
+            <p id="pressure" class="text-warning">45</p>
+          </div>
+          <div class="col-sm d-flex flex-column align-items-center">
+            <p>Current Temperature:</p>
+            <p id="current-temp" class="text-warning">26℃</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="forecast-container" class="container mt-4 text-light"></div>
+
+    <footer class="mt-5 p-2 text-center bg-light mt-auto">
+      Weather App &copy;
+    </footer>
+
+    <script src="weather.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

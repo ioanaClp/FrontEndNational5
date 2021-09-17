@@ -3,16 +3,26 @@ const addStudentInput = document.querySelector('.student-input');
 const addStudentButton = document.querySelector('.student-button');
 const sortAsc = document.querySelector('.sort-asc');
 const sortDesc = document.querySelector('.sort-desc');
-const viewStudentButton = document.querySelector('.details-button');
-const deleteStudentButton = document.querySelector('.button-trash');
 const table = document.querySelector('.table');
 const tableBody = document.querySelector('#student-list');
+const addGradeInput = document.querySelector('.grade-input');
+const studentGradesTable = document.getElementById('student-grades');
+const tableBodyGrades = document.querySelector('#grades-list');
+const gradeInput = document.querySelector('.grade-input');
 
 //Event Listeners
 addStudentButton.addEventListener('click', addStudent);
 sortAsc.addEventListener('click', sortListAsc);
 sortDesc.addEventListener('click', sortListDesc);
-// viewStudentButton.addEventListener('click', viewStudentDetails);
+
+class Student {
+    constructor(name, grades) {
+        this.name = name
+        this.grades = grades
+    }
+}
+var students = []
+var currentSelectedStudent = null
 
 
 //Functions
@@ -20,28 +30,38 @@ function addStudent(event) {
     //Prevent form from submitting
     event.preventDefault();
 
-    //Create tr
-    const newTr = document.createElement('tr');
-    newTr.classList.add('added-tr')
+    if (addStudentInput.value !== "") {
+        const studentName = addStudentInput.value
+        const student = new Student(studentName, [])
+        students.push(student)
 
-    newTr.innerHTML = `
-        <td>${addStudentInput.value}</td>
-        <td class="average-column">${Math.floor(Math.random() * 10)}</td>
-        <td><button class="details-button">View/Add Details</button></td>
-        <td><i class="fas fa-trash-alt delete"></i></td>
-      `;
+        // Draw table
+        drawStudentsTable()
 
-    // Appen row in table
-    tableBody.appendChild(newTr);
-
-    //CLEAR TO DO INPUT VALUE
-    addStudentInput.value = "";
+        //CLEAR TO DO INPUT VALUE
+        addStudentInput.value = "";
+    }
 }
 
-function deleteStudent(el) {
-    if (el.classList.contains('delete')) {
-        el.parentElement.parentElement.remove();
-    }
+function drawStudentsTable() {
+    tableBody.innerHTML = ""
+    students.forEach((student, i) => {
+        const newTr = document.createElement('tr');
+        newTr.classList.add('added-tr')
+        newTr.innerHTML = `
+        <td>${student.name}</td>
+        <td class="average-column">${averageGrades(student.grades)}</td>
+        <td><button id="details-button" onclick="viewStudentDetails('${i}')">View/Add Details</button></td>
+        <td><i class="fas fa-trash-alt delete" onclick="deleteStudent('${i}')"></i></td>
+        `;
+
+        tableBody.appendChild(newTr);
+    })
+}
+
+function deleteStudent(i) {
+    delete students[i]
+    drawStudentsTable()
 }
 
 function sortListAsc(event) {
@@ -67,16 +87,12 @@ function sortList(isAsc) {
 
         for (i = 0; i < (listOfTr.length - 1); i++) {
             shouldSwitch = false;
-            console.log("innerhtml " + listOfTr[i])
             var tds = tableBody.getElementsByClassName("average-column")
-            console.log("tds " + tds[0].innerHTML)
 
-
-
-            if (isAsc && listOfTr[i].innerHTML.toLowerCase() > listOfTr[i + 1].innerHTML.toLowerCase()) {
+            if (isAsc && tds[i].innerHTML > tds[i + 1].innerHTML) {
                 shouldSwitch = true;
                 break;
-            } else if (!isAsc && listOfTr[i].innerHTML.toLowerCase() < listOfTr[i + 1].innerHTML.toLowerCase()) {
+            } else if (!isAsc && tds[i].innerHTML < tds[i + 1].innerHTML) {
                 shouldSwitch = true;
                 break;
             }
@@ -86,6 +102,78 @@ function sortList(isAsc) {
             switching = true;
         }
     }
+
+}
+
+function viewStudentDetails(studentI) {
+    const student = students[studentI]
+    this.currentSelectedStudent = student;
+
+    drawGradesTable(studentI)
+
+    console.log(document.getElementById('student-name-grade'));
+    document.getElementById('student-name-grade').innerHTML = "Student's Name: " + student.name;
+}
+
+function removeGrade(studentIndex, gradeIndex) {
+    console.log("on click remove", studentIndex + " " + gradeIndex)
+    const student = students[studentIndex]
+    delete student.grades[gradeIndex]
+
+    drawGradesTable()
+}
+
+function drawGradesTable(studentI) {
+    const student = students[studentI]
+
+    tableBodyGrades.innerHTML = "" // remove old data
+
+    student.grades.forEach((item, gradeI) => {
+        const newTr = document.createElement('tr');
+        newTr.classList.add('added-grade-tr')
+
+        newTr.innerHTML = `
+            <td>${item}</td>
+            <td><i class="fas fa-trash-alt delete" onclick="deleteStudent('${i}')"></i></td>
+            <td><i class="fas fa-trash-alt delete" onclick="removeGrade('${studentI}')"></i></td>
+          `;
+
+        tableBodyGrades.appendChild(newTr);
+    })
+
+    studentGradesTable.style.visibility = "visible";
+
+    const addGradeBtn = document.getElementById('add-grade');
+    addGradeBtn.addEventListener('click', addGrade);
+}
+
+function addGrade() {
+    if (gradeInput.value !== "") {
+        currentSelectedStudent.grades.push(gradeInput.value)
+
+        const newTr = document.createElement('tr');
+        newTr.classList.add('added-grade-tr')
+        newTr.innerHTML = `
+        <td>${gradeInput.value}</td>
+        <td><i class="fas fa-trash-alt delete"></i></td>
+      `;
+        tableBodyGrades.appendChild(newTr);
+        gradeInput.value = ""
+
+        drawStudentsTable()
+    }
+}
+
+function averageGrades(grades) {
+    console.log("grades", grades)
+    var sum = 0;
+
+    grades.forEach(element => {
+        sum = sum + parseInt(element);
+    })
+
+    var avg = sum / grades.length;
+    return avg;
 }
 
 // Event: Remove a Student
