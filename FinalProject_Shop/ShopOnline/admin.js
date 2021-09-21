@@ -11,8 +11,6 @@ const descriptionInput = document.getElementById("product-description")
 const addProductButton = document.getElementById("submit-button")
 addProductButton.addEventListener("click", onClickAdd)
 
-const deleteProductButton = document.getElementById('delete-product')
-
 window.onload = function () {
     setTimeout(() => {
         getProducts()
@@ -26,7 +24,7 @@ class UI {
         div.className = `alert alert-${className}`;
         div.appendChild(document.createTextNode(message));
         const container = document.querySelector('.product-container');
-        const form = document.querySelector('#product-form');
+        const form = document.querySelector('.product-form');
         container.insertBefore(div, form);
 
         // Vanish in 3 seconds
@@ -71,6 +69,7 @@ function onClickAdd(e) {
             imageInput.value = ''
             descriptionInput.value = ''
 
+            getProducts();
         }).catch(e => {
             // TODO show error message
             UI.showAlert('Something went wrong. The product was not saved', 'danger');
@@ -98,13 +97,32 @@ function getProducts() {
                 <td>${product.category}</td>
                 <td>${product.image}</td>
                 <td>${product.description}</td>
-                <td><a href="#" id="delete-product" class="btn btn-dark">Delete</a></td>
+                <td><a href="#" id="delete-product" class="btn btn-dark" onclick="onClickDelete('${product.id}')">Delete</a></td>
                 </tr>
                 `
             })
 
             output += `</tbody>`;
-
             document.getElementById('output').innerHTML = output;
         })
+}
+
+function onClickDelete(productId) {
+    console.log('Delete called' + productId)
+
+    // DELETE
+    fetch(`https://61363d228700c50017ef54cf.mockapi.io/products/${productId}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data)
+
+            return getProducts();
+        }).then(() => {
+            UI.showAlert('Product deleted successfully', 'success');
+        }).catch(() => {
+            UI.showAlert('Something went wrong. The product was not deleted', 'danger');
+        });
 }

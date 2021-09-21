@@ -1,80 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
     <title>CozyNest. - Admin</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand mx-5" href="#">CozyNest.</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-      
-          <div class="collapse navbar-collapse" id="navbarColor03">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">Home
-                  <span class="visually-hidden">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-            </ul>
+      <div class="container-fluid">
+        <a class="navbar-brand mx-5" href="#">CozyNest.</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarColor03"
+          aria-controls="navbarColor03"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="#" class="nav-link text-dark" ><i class="fal fa-search"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link text-dark" ><i class="fal fa-shopping-cart"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link text-dark"><i class="fal fa-heart"></i></a>
-                </li>
-            </ul>
-          </div>
+        <div class="collapse navbar-collapse" id="navbarColor03">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#"
+                >Home
+                <span class="visually-hidden">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Shop</a
+              >
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="fal fa-search"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="fal fa-shopping-cart"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="fal fa-heart"></i
+              ></a>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
 
     <!-- Add New Product Container-->
     <div class="container product-container">
-        <h3 class="my-3" style="text-shadow: 1.5px -1.5px #e1bdab;">Add New Product</h3>
-        <form class="product-form">
-            <input type="text" class="form-control mb-3" id="product-name" placeholder="Product Name...">
-            <input type="text" class="form-control mb-3" id="product-price" placeholder="Product Price...">
-            <input type="text" class="form-control mb-3" id="product-stock" placeholder="Product Stock...">
-            <input type="text" class="form-control mb-3" id="product-category" placeholder="Product Category...">
-            <input type="text" class="form-control mb-3" id="product-image" placeholder="Product Image...">
-            <input type="text" class="form-control mb-3" id="product-description" placeholder="Product Description...">
-            <!-- <input type="text" class="form-control mb-3" id="product-rate" placeholder="Product Rate..."> -->
-            
-            
-            <button id="submit-button" type="submit" class="btn btn-dark">Add Product</button>
-        </form>
-          
+      <h3 class="my-3" style="text-shadow: 1.5px -1.5px #e1bdab">
+        Add New Product
+      </h3>
+      <form class="product-form">
+        <input
+          type="text"
+          class="form-control mb-3"
+          id="product-name"
+          placeholder="Product Name..."
+        />
+        <input
+          type="text"
+          class="form-control mb-3"
+          id="product-price"
+          placeholder="Product Price..."
+        />
+        <input
+          type="text"
+          class="form-control mb-3"
+          id="product-stock"
+          placeholder="Product Stock..."
+        />
+        <input
+          type="text"
+          class="form-control mb-3"
+          id="product-category"
+          placeholder="Product Category..."
+        />
+        <input
+          type="text"
+          class="form-control mb-3"
+          id="product-image"
+          placeholder="Product Image..."
+        />
+        <input
+          type="text"
+          class="form-control mb-3"
+          id="product-description"
+          placeholder="Product Description..."
+        />
+        <!-- <input type="text" class="form-control mb-3" id="product-rate" placeholder="Product Rate..."> -->
+
+        <button id="submit-button" type="submit" class="btn btn-dark">
+          Add Product
+        </button>
+      </form>
     </div>
 
     <!-- Product Table Container-->
     <div class="container">
-    <table class="table table-hover mt-4">
+      <table class="table table-hover mt-4">
         <thead>
           <tr>
             <th scope="col">Id</th>
@@ -87,11 +152,10 @@
             <th scope="col">Delete</th>
           </tr>
         </thead>
-        <tbody id="output">
-        </tbody>
+        <tbody id="output"></tbody>
       </table>
     </div>
 
-      <script src="admin.js"></script>
-</body>
+    <script src="admin.js"></script>
+  </body>
 </html>
