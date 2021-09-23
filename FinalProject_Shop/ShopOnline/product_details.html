@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>CozyNest. - Admin</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand mx-5"
+          href="index.html"
+          style="text-shadow: 1px -1.5px #e1bdab"
+          >CozyNest.</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarColor03"
+          aria-controls="navbarColor03"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor03">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html"
+                >Home
+                <span class="visually-hidden">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Shop</a
+              >
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="admin.html">Sign In</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="fal fa-search"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a href="cart.html" class="nav-link text-dark"
+                ><i class="fal fa-shopping-cart"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-dark"
+                ><i class="fal fa-heart"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Product Image and Short Description -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-md">
+            <img id="product-image-details" class="img-fluid" alt="" />
+          </div>
+          <div class="col-md p-5">
+            <h2 id="product-title"></h2>
+            <p id="product-price"></p>
+            <p id="product-description"></p>
+            <p>Stock: <span id="product-stock"></span> products</p>
+            <a href="#" class="btn btn-dark text-light mt-3">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Products Section -->
+    <section id="related-products" class="mt-4">
+      <h3 class="text-center mb-4" style="text-shadow: 1px -1.5px #e1bdab">
+        Related Products
+      </h3>
+      <div class="d-flex row justify-content-center">
+        <div class="card-goup" style="width: 18rem">
+          <div class="card border-0">
+            <a class="text-dark" style="text-decoration: none" href="#">
+              <img
+                class="card-img-top img-fluid"
+                style="width: 100%; height: 12vw; object-fit: cover"
+                src="Images/03_chair.jpeg"
+                alt="Card image cap"
+              />
+              <p class="card-text text-center pt-2">
+                Comfy Chair <br />
+                <small>$299</small>
+              </p>
+            </a>
+          </div>
+        </div>
+
+        <div class="card-goup" style="width: 18rem">
+          <div class="card border-0">
+            <a class="text-dark" style="text-decoration: none" href="#">
+              <img
+                class="card-img-top img-fluid"
+                style="width: 100%; height: 12vw; object-fit: cover"
+                src="Images/12_chair.jpg"
+                alt="Card image cap"
+              />
+              <p class="card-text text-center pt-2">
+                Comfy Chair <br />
+                <small>$299</small>
+              </p>
+            </a>
+          </div>
+        </div>
+
+        <div class="card-goup" style="width: 18rem">
+          <div class="card border-0">
+            <a class="text-dark" style="text-decoration: none" href="#">
+              <img
+                class="card-img-top img-fluid"
+                style="width: 100%; height: 12vw; object-fit: cover"
+                src="Images/05_chair.webp"
+                alt="Card image cap"
+              />
+              <p class="card-text text-center pt-2">
+                Comfy Chair <br />
+                <small>$299</small>
+              </p>
+            </a>
+          </div>
+        </div>
+
+        <div class="card-goup" style="width: 18rem">
+          <div class="card border-0">
+            <a class="text-dark" style="text-decoration: none" href="#">
+              <img
+                class="card-img-top img-fluid"
+                style="width: 100%; height: 12vw; object-fit: cover"
+                src="Images/10_chair.jpeg"
+                alt="Card image cap"
+              />
+              <p class="card-text text-center pt-2">
+                Comfy Chair <br />
+                <small>$299</small>
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer" class="bg-light mt-5 py-3">
+      <div class="container">
+        <div class="row pt-3">
+          <div class="col-sm text-center">
+            <h5>About Us</h5>
+            <p class="pt-1">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+              eligendi consectetur at laborum aliquam, rem omnis corrupti
+              accusantium. Nesciunt quas esse fugiat a sed!
+            </p>
+          </div>
+          <div class="col-sm text-center">
+            <h5>People</h5>
+            <a class="d-block text-dark" style="text-decoration: none" href="#"
+              >My Account</a
+            >
+            <a class="d-block text-dark" style="text-decoration: none" href="#"
+              >Check Out</a
+            >
+            <a class="d-block text-dark" style="text-decoration: none" href="#"
+              >Help</a
+            >
+            <a class="d-block text-dark" style="text-decoration: none" href="#"
+              >Support</a
+            >
+            <a class="d-block text-dark" style="text-decoration: none" href="#"
+              >FAQs</a
+            >
+          </div>
+          <div class="col-sm text-center">
+            <h5>Contact Us</h5>
+            <div class="container">
+              <a
+                href="#"
+                class="btn btn-link btn-floating btn-lg text-dark"
+                style="text-decoration: none"
+                ><i class="fas fa-phone-square-alt px-2"></i
+                >+1(888)-234-56789</a
+              >
+              <a
+                href="#"
+                class="
+                  btn btn-link btn-floating btn-lg
+                  text-dark text-lowercase
+                "
+                style="text-decoration: none"
+                ><i class="fas fa-envelope-square px-2"></i
+                >minzatioana@gmail.com</a
+              >
+              <a href="#" class="btn btn-link btn-floating btn-lg text-dark m-1"
+                ><i class="fab fa-facebook-square"></i
+              ></a>
+              <a href="#" class="btn btn-link btn-floating btn-lg text-dark m-1"
+                ><i class="fab fa-twitter-square"></i
+              ></a>
+              <a href="#" class="btn btn-link btn-floating btn-lg text-dark m-1"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="btn btn-link btn-floating btn-lg text-dark m-1"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center p-2">
+        <p>© 2021 Copyright COZYNEST</p>
+      </div>
+      <!-- Copyright -->
+    </section>
+
+    <script src="product-details.js"></script>
+  </body>
+</html>

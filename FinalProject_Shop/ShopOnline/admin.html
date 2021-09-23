@@ -24,7 +24,12 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand mx-5" href="#">CozyNest.</a>
+        <a
+          class="navbar-brand mx-5"
+          href="index.html"
+          style="text-shadow: 1px -1.5px #e1bdab"
+          >CozyNest.</a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -40,7 +45,7 @@
         <div class="collapse navbar-collapse" id="navbarColor03">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="#"
+              <a class="nav-link active" href="index.html"
                 >Home
                 <span class="visually-hidden">(current)</span>
               </a>
@@ -64,6 +69,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="admin.html">Sign In</a>
+            </li>
           </ul>
 
           <ul class="navbar-nav">
@@ -73,7 +81,7 @@
               ></a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link text-dark"
+              <a href="cart.html" class="nav-link text-dark"
                 ><i class="fal fa-shopping-cart"></i
               ></a>
             </li>
@@ -139,7 +147,7 @@
 
     <!-- Product Table Container-->
     <div class="container">
-      <table class="table table-hover mt-4">
+      <table class="table table-hover my-4">
         <thead>
           <tr>
             <th scope="col">Id</th>
@@ -149,12 +157,86 @@
             <th scope="col">Category</th>
             <th scope="col">Image</th>
             <th scope="col">Description</th>
+            <th scope="col">Edit</th>
             <th scope="col">Delete</th>
           </tr>
         </thead>
         <tbody id="output"></tbody>
       </table>
     </div>
+
+    <!-- Footer -->
+    <section id="footer" class="bg-light mt-5 py-3">
+      <div class="container">
+        <div class="row pt-3">
+          <div class="col-sm text-center">
+            <h5>About Us</h5>
+            <p class="pt-1">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+              eligendi consectetur at laborum aliquam, rem omnis corrupti
+              accusantium. Nesciunt quas esse fugiat a sed!
+            </p>
+          </div>
+          <div class="col-sm text-center">
+            <h5>People</h5>
+            <a class="d-block text-dark" style="text-decoration: none" href="#"
+              >My Account</a
+            >
+            <a class="d-block text-dark" style="text-decoration: none" href="#"
+              >Check Out</a
+            >
+            <a class="d-block text-dark" style="text-decoration: none" href="#"
+              >Help</a
+            >
+            <a class="d-block text-dark" style="text-decoration: none" href="#"
+              >Support</a
+            >
+            <a class="d-block text-dark" style="text-decoration: none" href="#"
+              >FAQs</a
+            >
+          </div>
+          <div class="col-sm text-center">
+            <h5>Contact Us</h5>
+            <div class="container">
+              <a
+                href="#"
+                class="btn btn-link btn-floating btn-lg text-dark"
+                style="text-decoration: none"
+                ><i class="fas fa-phone-square-alt px-2"></i
+                >+1(888)-234-56789</a
+              >
+              <a
+                href="#"
+                class="
+                  btn btn-link btn-floating btn-lg
+                  text-dark text-lowercase
+                "
+                style="text-decoration: none"
+                ><i class="fas fa-envelope-square px-2"></i
+                >minzatioana@gmail.com</a
+              >
+              <a href="#" class="btn btn-link btn-floating btn-lg text-dark m-1"
+                ><i class="fab fa-facebook-square"></i
+              ></a>
+              <a href="#" class="btn btn-link btn-floating btn-lg text-dark m-1"
+                ><i class="fab fa-twitter-square"></i
+              ></a>
+              <a href="#" class="btn btn-link btn-floating btn-lg text-dark m-1"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="btn btn-link btn-floating btn-lg text-dark m-1"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center p-2">
+        <p>© 2021 Copyright COZYNEST</p>
+      </div>
+      <!-- Copyright -->
+    </section>
 
     <script src="admin.js"></script>
   </body>

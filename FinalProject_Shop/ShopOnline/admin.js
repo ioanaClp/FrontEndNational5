@@ -12,9 +12,7 @@ const addProductButton = document.getElementById("submit-button")
 addProductButton.addEventListener("click", onClickAdd)
 
 window.onload = function () {
-    setTimeout(() => {
-        getProducts()
-    }, 1000)
+    getProducts()
 }
 
 // UI Class: Handle UI Tasks
@@ -80,7 +78,7 @@ function onClickAdd(e) {
 }
 
 
-// Get products
+// Get Products
 function getProducts() {
     fetch("https://61363d228700c50017ef54cf.mockapi.io/products")
         .then(res => res.json())
@@ -97,6 +95,7 @@ function getProducts() {
                 <td>${product.category}</td>
                 <td>${product.image}</td>
                 <td>${product.description}</td>
+                <td><a href="#" id="edit-product" class="btn btn-dark" onclick="onClickEdit('${product.id}')">Edit</a></td>
                 <td><a href="#" id="delete-product" class="btn btn-dark" onclick="onClickDelete('${product.id}')">Delete</a></td>
                 </tr>
                 `
@@ -107,10 +106,23 @@ function getProducts() {
         })
 }
 
-function onClickDelete(productId) {
-    console.log('Delete called' + productId)
+// PUT - edit existing product
+function onClickEdit(productId) {
+    console.log('Edit called ' + productId);
 
-    // DELETE
+    fetch(`https://61363d228700c50017ef54cf.mockapi.io/products/${productId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+    })
+
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+}
+
+// Delete Products
+function onClickDelete(productId) {
+    console.log('Delete called ' + productId)
+
     fetch(`https://61363d228700c50017ef54cf.mockapi.io/products/${productId}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
