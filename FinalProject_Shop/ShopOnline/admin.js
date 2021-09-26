@@ -8,6 +8,9 @@ const categoryInput = document.getElementById("product-category")
 const imageInput = document.getElementById("product-image")
 const descriptionInput = document.getElementById("product-description")
 
+let isEditing = false;
+let productId = null;
+
 const addProductButton = document.getElementById("submit-button")
 addProductButton.addEventListener("click", onClickAdd)
 
@@ -35,46 +38,88 @@ function onClickAdd(e) {
     e.preventDefault()
     // Read all input fields and get their values
 
-    console.log("Add product called")
-    const nameValue = nameInput.value
-    const priceValue = priceInput.value
-    const stockValue = stockInput.value
-    const categoryValue = categoryInput.value
-    const imageValue = imageInput.value
-    const descriptionValue = descriptionInput.value
+    if (!isEditing) {
+        console.log("Add product called")
+        const nameValue = nameInput.value
+        const priceValue = priceInput.value
+        const stockValue = stockInput.value
+        const categoryValue = categoryInput.value
+        const imageValue = imageInput.value
+        const descriptionValue = descriptionInput.value
 
-    if (nameValue && priceValue && stockValue && categoryValue && imageValue && descriptionValue) {
-        const newProduct = {
-            name: nameValue,
-            image: imageValue,
-            price: priceValue,
-            description: descriptionValue,
-            category: categoryValue,
-            stock: stockValue,
+        if (nameValue && priceValue && stockValue && categoryValue && imageValue && descriptionValue) {
+            const newProduct = {
+                name: nameValue,
+                image: imageValue,
+                price: priceValue,
+                description: descriptionValue,
+                category: categoryValue,
+                stock: stockValue,
+            }
+
+            fetch("https://61363d228700c50017ef54cf.mockapi.io/products", {
+                method: 'POST',
+                body: JSON.stringify(newProduct),
+                headers: { 'Content-Type': 'application/json' },
+            }).then(response => {
+                // TODO show success message
+                UI.showAlert('Product Added', 'success');
+                nameInput.value = ''
+                priceInput.value = ''
+                stockInput.value = ''
+                categoryInput.value = ''
+                imageInput.value = ''
+                descriptionInput.value = ''
+
+                getProducts();
+            }).catch(e => {
+                // TODO show error message
+                UI.showAlert('Something went wrong. The product was not saved', 'danger');
+            })
+        } else {
+            UI.showAlert('Please fill in all fields', 'danger');
         }
-
-        fetch("https://61363d228700c50017ef54cf.mockapi.io/products", {
-            method: 'POST',
-            body: JSON.stringify(newProduct),
-            headers: { 'Content-Type': 'application/json' },
-        }).then(response => {
-            // TODO show success message
-            UI.showAlert('Product Added', 'success');
-            nameInput.value = ''
-            priceInput.value = ''
-            stockInput.value = ''
-            categoryInput.value = ''
-            imageInput.value = ''
-            descriptionInput.value = ''
-
-            getProducts();
-        }).catch(e => {
-            // TODO show error message
-            UI.showAlert('Something went wrong. The product was not saved', 'danger');
-        })
     } else {
-        UI.showAlert('Please fill in all fields', 'danger');
+        const nameValue = nameInput.value
+        const priceValue = priceInput.value
+        const stockValue = stockInput.value
+        const categoryValue = categoryInput.value
+        const imageValue = imageInput.value
+        const descriptionValue = descriptionInput.value
+
+        if (nameValue && priceValue && stockValue && categoryValue && imageValue && descriptionValue) {
+            const newProduct = {
+                name: nameValue,
+                image: imageValue,
+                price: priceValue,
+                description: descriptionValue,
+                category: categoryValue,
+                stock: stockValue,
+            }
+
+            fetch("https://61363d228700c50017ef54cf.mockapi.io/products/" + productId, {
+                method: 'PUT',
+                body: JSON.stringify(newProduct),
+                headers: { 'Content-Type': 'application/json' },
+            }).then(() => {
+                getProducts()
+
+                nameInput.value = ''
+                priceInput.value = ''
+                stockInput.value = ''
+                categoryInput.value = ''
+                imageInput.value = ''
+                descriptionInput.value = ''
+
+                document.getElementById('submit-button').innerHTML = 'Add Product';
+
+                isEditing = false;
+            })
+
+        }
     }
+
+
 }
 
 
@@ -83,40 +128,86 @@ function getProducts() {
     fetch("https://61363d228700c50017ef54cf.mockapi.io/products")
         .then(res => res.json())
         .then(data => {
-            let output = `<tbody id="output">`;
+            document.getElementById('output').innerHTML = '';
 
             data.forEach(product => {
-                output += `
-                <tr>
-                <th scope="row">${product.id}</th>
-                <td>${product.name}</td>
-                <td>${product.price}</td>
-                <td>${product.stock}</td>
-                <td>${product.category}</td>
-                <td><img src="${product.image}" class="img-fluid img-thumbnail" style="width: 60%; height: 6vw; object-fit: cover"/></td>
-                <td>${product.description}</td>
-                <td><a href="#" id="edit-product" class="btn btn-dark" onclick="onClickEdit('${product.id}')">Edit</a></td>
-                <td><a href="#" id="delete-product" class="btn btn-dark" onclick="onClickDelete('${product.id}')">Delete</a></td>
-                </tr>
-                `
-            })
+                const tr = document.createElement('tr');
 
-            output += `</tbody>`;
-            document.getElementById('output').innerHTML = output;
+                const th = document.createElement('th');
+                th.innerHTML = product.id;
+
+                const tdName = document.createElement('td');
+                tdName.innerHTML = product.name;
+
+                const tdPrice = document.createElement('td');
+                tdPrice.innerHTML = product.price;
+
+                const tdStock = document.createElement('td');
+                tdStock.innerHTML = product.stock;
+
+                const tdCategory = document.createElement('td');
+                tdCategory.innerHTML = product.category;
+
+                const srcImage = document.createElement('img');
+                srcImage.src = product.image;
+                srcImage.className = 'img-fluid img-thumbnail';
+                srcImage.style = 'width: 60%; height: 6vw; object-fit: cover'
+                const tdImage = document.createElement('td');
+                tdImage.appendChild(srcImage);
+
+                const tdDescription = document.createElement('td');
+                tdDescription.innerHTML = product.description;
+
+                const linkEdit = document.createElement('a');
+                linkEdit.id = 'edit-product';
+                linkEdit.className = 'btn btn-dark';
+                linkEdit.innerHTML = 'Edit';
+                linkEdit.onclick = function () {
+                    onClickEdit(product);
+                }
+                const tdEdit = document.createElement('td');
+                tdEdit.appendChild(linkEdit);
+
+                const linkDelete = document.createElement('a');
+                linkDelete.id = 'delete-product';
+                linkDelete.className = 'btn btn-dark';
+                linkDelete.innerHTML = 'Delete';
+                linkDelete.onclick = function () {
+                    onClickDelete(product.id);
+                }
+                const tdDelete = document.createElement('td');
+                tdDelete.appendChild(linkDelete);
+
+                tr.appendChild(th);
+                tr.appendChild(tdName);
+                tr.appendChild(tdPrice);
+                tr.appendChild(tdStock);
+                tr.appendChild(tdCategory);
+                tr.appendChild(tdImage);
+                tr.appendChild(tdDescription);
+                tr.appendChild(tdEdit);
+                tr.appendChild(tdDelete);
+
+                document.getElementById('output').appendChild(tr);
+            })
         })
 }
 
 // PUT - edit existing product
-function onClickEdit(productId) {
-    console.log('Edit called ' + productId);
+function onClickEdit(product) {
+    console.log('Edit called ' + JSON.stringify(product));
 
-    fetch(`https://61363d228700c50017ef54cf.mockapi.io/products/${productId}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-    })
+    nameInput.value = product.name;
+    priceInput.value = product.price;
+    stockInput.value = product.stock;
+    categoryInput.value = product.category;
+    imageInput.value = product.image;
+    descriptionInput.value = product.description;
 
-        .then((response) => response.json())
-        .then((data) => console.log(data));
+    isEditing = true;
+    productId = product.id;
+
+    document.getElementById('submit-button').innerHTML = 'Update Product';
 }
 
 // Delete Products
@@ -131,9 +222,12 @@ function onClickDelete(productId) {
         .then((data) => {
             console.log(data)
 
+            if (data !== "Not found") {
+                UI.showAlert('Product deleted successfully', 'success');
+            } else {
+                UI.showAlert('Product was not found', 'danger');
+            }
             return getProducts();
-        }).then(() => {
-            UI.showAlert('Product deleted successfully', 'success');
         }).catch(() => {
             UI.showAlert('Something went wrong. The product was not deleted', 'danger');
         });
