@@ -93,7 +93,7 @@ function getProducts() {
                 <td>${product.price}</td>
                 <td>${product.stock}</td>
                 <td>${product.category}</td>
-                <td>${product.image}</td>
+                <td><img src="${product.image}" class="img-fluid img-thumbnail" style="width: 60%; height: 6vw; object-fit: cover"/></td>
                 <td>${product.description}</td>
                 <td><a href="#" id="edit-product" class="btn btn-dark" onclick="onClickEdit('${product.id}')">Edit</a></td>
                 <td><a href="#" id="delete-product" class="btn btn-dark" onclick="onClickDelete('${product.id}')">Delete</a></td>
