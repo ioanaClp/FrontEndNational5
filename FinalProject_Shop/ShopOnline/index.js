@@ -61,7 +61,7 @@ function renderProducts(data) {
         }
 
         output += `
-                <div class="card-goup mt-2" style="width: 20rem">
+                <div class="card-goup mt-2" style="width: 18rem">
                 <div class="card border-0">
                   <a
                     class="text-dark"
@@ -70,7 +70,7 @@ function renderProducts(data) {
                   >
                     <img
                       class="card-img-top img-fluid"
-                      style="width: 100%; height: 18vw; object-fit: cover"
+                      style="width: 100%; height: 24vw; object-fit: cover"
                       src="${product.image}"
                       alt="Card image cap"
                     />
