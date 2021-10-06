@@ -25,7 +25,7 @@ function getProduct() {
             console.log(data)
 
             document.getElementById('product-title').innerHTML = data.name;
-            document.getElementById('product-price').innerHTML = data.price;
+            document.getElementById('product-price').innerHTML = "$" + data.price;
             document.getElementById('product-description').innerHTML = 'Description: ' + data.description;
             document.getElementById('product-stock').innerHTML = data.stock;
             document.getElementById('product-image-details').src = data.image;
@@ -46,7 +46,19 @@ function addProductToCart() {
         cartList = JSON.parse(localStorage.getItem('cartProducts'));
     }
 
-    cartList.push(product);
+    let foundIt = false;
+    cartList.forEach(element => {
+        if (element.id === product.id) {
+            foundIt = true;
+        }
+    })
+
+    product.quantity = 1;
+
+    if (!foundIt) {
+        cartList.push(product);
+    }
+
     localStorage.setItem('cartProducts', JSON.stringify(cartList));
 
     showAlertAddToCart();
@@ -60,20 +72,20 @@ function getRelatedProducts(initialProduct) {
             data.forEach(element => {
                 if (element.category === initialProduct.category && element.id !== initialProduct.id) {
                     output += `
-                        <div class="card-goup" style="width: 14rem">
+                        <div class="card-goup" style="width: 18rem; height: auto">
                         <div class="card border-0">
-                        <a class="text-dark" style="text-decoration: none" href="product_details.html?id=${element.id}">
-                            <img
-                            class="card-img-top img-fluid"
-                            style="width: 100%; height: 20vw; object-fit: cover"
-                            src="${element.image}"
-                            alt="Card image cap"
-                            />
-                            <p class="card-text text-center pt-2">
-                            ${element.name} <br />
-                            <small>${element.price}</small>
-                            </p>
-                        </a>
+                            <a class="text-dark" style="text-decoration: none" href="product_details.html?id=${element.id}">
+                                <img
+                                class="card-img-top img-fluid"
+                                style="width: 100%; height: 24rem; object-fit: cover"
+                                src="${element.image}"
+                                alt="Card image cap"
+                                />
+                                <p class="card-text text-center pt-2">
+                                ${element.name} <br />
+                                <small>${element.price}</small>
+                                </p>
+                            </a>
                         </div>
                     </div>
                     `
@@ -86,7 +98,7 @@ function getRelatedProducts(initialProduct) {
 
 function showAlertAddToCart() {
     const div = document.createElement('div');
-    div.style.width = '60%'
+    div.style.width = '80%'
     div.style.margin = 'auto'
     div.style.marginBottom = '20px'
     div.className = 'alert alert-success';

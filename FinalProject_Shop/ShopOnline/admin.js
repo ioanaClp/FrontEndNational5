@@ -140,7 +140,7 @@ function getProducts() {
                 tdName.innerHTML = product.name;
 
                 const tdPrice = document.createElement('td');
-                tdPrice.innerHTML = product.price;
+                tdPrice.innerHTML = '$' + product.price;
 
                 const tdStock = document.createElement('td');
                 tdStock.innerHTML = product.stock;
